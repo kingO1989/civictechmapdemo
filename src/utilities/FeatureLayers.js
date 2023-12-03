@@ -38,7 +38,7 @@ async function formatContent(event) {
         deviceid = "gabe1";
     }
     let text = "";
-    let tempurl = `https://noisemeter.webcomand.com/io_comand_webservice/get?token=UPooYuLm4Zwu859Ehidgl5Ta19iuKTUG&format=application/json&query=SELECT Timestamp,DeviceID,Min,Max FROM Noise WHERE DeviceID='${deviceid}' ORDER BY Timestamp DESC LIMIT 50`;
+    let tempurl = `${process.env.REACT_APP_WEB_CMD}json&query=SELECT Timestamp,DeviceID,Min,Max FROM Noise WHERE DeviceID='${deviceid}' ORDER BY Timestamp DESC LIMIT 50`;
     var response = await fetch(tempurl, {
         method: 'GET',
 
